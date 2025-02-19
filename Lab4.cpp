@@ -93,6 +93,15 @@ string stringReverse(string toReverse)
   /*
     Your code goes here
   */
+ 	for (char b : toReverse) {
+		reverse.push(b);
+	};
+
+	while (!toReverse.empty()) {
+		newString += reverse.top();
+		reverse.pop();
+	};
+
   return newString;
 }
 
@@ -103,5 +112,13 @@ bool parenCheck(string toCheck)
   /*
     Your code goes here
   */
+
+
+
+
+
+
+
+
   return false; //need a return statement to compile
 }
