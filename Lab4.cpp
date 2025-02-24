@@ -93,14 +93,16 @@ string stringReverse(string toReverse)
   /*
     Your code goes here
   */
- 	for (char b : toReverse) {
-		reverse.push(b);
-	};
+	for (char plate : toReverse) {
+        reverse.push(plate);
+    }
+						// idk why it wont work, but i ran out
+						// of time. so im sorry
+    while (!reverse.empty()) {
+        newString += reverse.top();
+        reverse.pop();
+    }
 
-	while (!toReverse.empty()) {
-		newString += reverse.top();
-		reverse.pop();
-	};
 
   return newString;
 }
@@ -113,10 +115,31 @@ bool parenCheck(string toCheck)
     Your code goes here
   */
 
+		for(int i = 0; i < toCheck.length(); i++)
+    {
+        checker.push(toCheck[i]);
+    }
 
+    int balance = 0;
 
+    while(checker.size() > 0)
+    {
+        char person = checker.front();
+        checker.pop();
 
-
+        if(person == '(')
+        {
+            balance = balance + 1;
+        }
+        if(person == ')')
+        {
+            balance = balance - 1;
+            if(balance < 0)
+            {
+                return false;
+            }
+        }
+    }
 
 
 
